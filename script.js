@@ -74,4 +74,61 @@ else if (age <18)
 {
   alert('you cannot vote');
 }
-console.log('hello woels')
+
+
+PROTOTYPE IN JJAVASCRIPT
+function person(first , last , age){
+  this.firstname = first;
+  this.lastname = last;
+  this.age= age;
+}
+
+person.prototype.phone = 9896919155;
+
+var pr1 = new person("kunal" , "arora" , 18);
+document.write('<br>')
+document.write('<br>')
+document.write("your namme is " +pr1.firstname + " with last name " +pr1.lastname +" and age is " + pr1.age +" and your number is " +pr1.phone);
+
+FORM SUBMISSION 
+
+function  formsubmit(){
+  var fn = document.forms["my-form"]["fname"].value;
+   
+  if(fn == ""){
+   alert("you have to enter something");
+   return false; 
+  }
+  else{
+   alert("you entered your name is " +fn)
+  }
+}
+
+const arrayquotes = [
+  {
+      'quote': 'Never Give Up',
+  },
+ 
+  {
+      'quote': 'Hustle Loyalty Respect',
+  },
+
+  {
+    'quote': 'Because of your smile, you make life more beautiful.',
+},
+
+{
+  'quote': 'The greatest self is a peaceful smile, that always sees the world smiling back.',
+},
+
+{
+  'quote': 'I love those who can smile in trouble.',
+},
+];
+
+
+function genquote() {
+  const random = Number.parseInt(Math.random() * arrayquotes.length);
+  document.querySelector('#qt').textContent = `\"${arrayquotes[random].quote}\"`;
+  
+}
